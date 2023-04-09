@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "kurakura",
+    "database": "bcr_development",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "kurakura",
+    "database": "bcr_staging",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "kurakura",
+    "database": "bcr_production",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}
