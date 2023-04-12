@@ -27,9 +27,9 @@ app.get("/", handler.showIndexLayout);
 
 app.get("/create", handler.showCreateLayout);
 
-app.post("/create", multerValidation, handler.processCreating);
+app.post("/create", multerValidation, handler.createCar);
 
-app.get("/update/:id", handler.showUpdateLayout);
+app.get("/update/:id", handler.updateById);
 
 app.put("/update", multerValidation, handler.processUpdating);
 
