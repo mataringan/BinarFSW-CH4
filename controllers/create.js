@@ -2,7 +2,7 @@ const { Cars } = require("../models");
 
 const createCars = (req, res) => {
   try {
-    const url = `/uploads/${req.file.filename}`;
+    const url = req.image;
     Cars.create({
       name: req.body.name,
       price: req.body.price,

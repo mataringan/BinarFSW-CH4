@@ -1,5 +1,4 @@
 const { Cars } = require("../models");
-const fs = require("fs");
 
 const updateById = (req, res) => {
   Cars.findOne({
@@ -15,14 +14,9 @@ const updateById = (req, res) => {
 
 const update = (req, res) => {
   try {
-    const url = `/uploads/${req.file.filename}`;
+    const car = req.car;
+    const url = req.image || car.image;
 
-    fs.unlink("public" + req.body.oldImage, (err) => {
-      if (err) {
-        console.log({ msg: err });
-      }
-      console.log("File has been deleted");
-    });
     Cars.update(
       {
         name: req.body.name,
@@ -30,7 +24,7 @@ const update = (req, res) => {
         size: req.body.size,
         image: url,
       },
-      { where: { id: req.body.id } }
+      { where: { id: car.id } }
     ).then(() => {
       res.status(201).redirect("/");
     });
