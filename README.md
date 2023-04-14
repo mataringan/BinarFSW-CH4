@@ -1,37 +1,37 @@
 # HTTP REQUST METHOD
 
-# Method Get
+### Method Get
 
-# Menampilkan halaman utama - ejs
+##### 1.Menampilkan halaman utama - ejs
 
 http://localhost:8081
 
-# Mendapatkan semua data - json
+##### 2.Mendapatkan semua data - json
 
 http://localhost:8081/cars
 
-# Mendapatkan data berdasarkan Id
+##### 3.Mendapatkan data berdasarkan Id
 
 http://localhost:8081/cars/:id
 
-# Method Post
+### Method Post
 
-# Membuat atau mengupload data baru
+##### 1.Membuat atau mengupload data baru
 
 http://localhost:8081
 
-# Method Put
+### Method Put
 
-# Mengedit sebuah data
+##### 1.Mengedit sebuah data
 
 http://localhost:8081/update/:id
 
-# Method Delete
+### Method Delete
 
 ##### 1.Menghapus Data
 
 http://localhost:8081/delete/:id
 
-# ERD
+### ERD
 
 ![image.png]({https://postimg.cc/pmBSQt14})
