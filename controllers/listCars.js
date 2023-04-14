@@ -2,7 +2,7 @@ const { Cars } = require("../models");
 
 const listCars = (req, res) => {
   Cars.findAll().then((cars) => {
-    res.json(cars);
+    res.status(200).json(cars);
   });
 };
 

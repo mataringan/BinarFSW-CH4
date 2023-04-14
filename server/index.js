@@ -5,13 +5,13 @@ const handler = require("./handler");
 const publicDir = path.join(__dirname, "../public");
 const cookieParser = require("cookie-parser");
 const checkCar = require("../middleware/checkCar");
-const imgMemoryMiddleware = require("../middleware/imgMemoryMiddleware");
-const cloudinaryUpload = require("../middleware/cloudinaryUpMiddleware");
-const { update, updateLayout } = require("../controllers/update");
+const imgMemoryMiddleware = require("../middleware/imageMemory");
+const cloudinaryUpload = require("../middleware/uploadImage");
 
 const app = express();
 
 const PORT = 8081;
+require("dotenv").config();
 
 app.use(express.static(publicDir));
 app.set("views", "../views"); // If you run the index js server directly from the file
@@ -49,7 +49,7 @@ app.post(
 );
 
 app.put(
-  "/api/update/:id",
+  "/update/:id",
   checkCar,
   imgMemoryMiddleware.single("image"),
   cloudinaryUpload,
@@ -57,6 +57,7 @@ app.put(
 );
 
 app.delete("/delete", handler.processDeleting);
+app.delete("/delete/:id", handler.deleteCarById);
 
 app.listen(PORT, () => {
   console.log(`listening on http://localhost:${PORT}`);

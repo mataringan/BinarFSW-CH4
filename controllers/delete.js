@@ -1,16 +1,8 @@
 const { Cars } = require("../models");
-const fs = require("fs");
 
 const deleteCar = (req, res) => {
-  // id & image diambil dari form input dengan type=hidden
   Cars.destroy({ where: { id: req.body.id } })
     .then(() => {
-      fs.unlink("public" + req.body.image, (err) => {
-        if (err) {
-          console.log({ msg: err });
-        }
-        console.log("File has been deleted");
-      });
       res.cookie("deleted", "Data has been deleted");
       res.redirect("/");
     })
@@ -22,4 +14,13 @@ const deleteCar = (req, res) => {
     });
 };
 
-module.exports = deleteCar;
+const deleteCarById = (req, res) => {
+  Cars.destroy({
+    where: {
+      id: req.params.id,
+    },
+  }).then(() => {
+    res.json("delete success");
+  });
+};
+module.exports = { deleteCar, deleteCarById };
