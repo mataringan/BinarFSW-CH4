@@ -28,7 +28,7 @@ http://localhost:8081/update/:id
 
 # Method Delete
 
-## Menghapus Data
+##### 1.Menghapus Data
 
 http://localhost:8081/delete/:id
 
