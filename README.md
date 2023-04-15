@@ -33,5 +33,3 @@ http://localhost:8081/update/:id
 http://localhost:8081/delete/:id
 
 ### ERD
-
-![image.png]({https://postimg.cc/pmBSQt14})

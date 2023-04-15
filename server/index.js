@@ -10,11 +10,10 @@ const cloudinaryUpload = require("../middleware/uploadImage");
 
 const app = express();
 
-const PORT = 8081;
-require("dotenv").config();
+const PORT = process.env.EX_PORT;
 
 app.use(express.static(publicDir));
-app.set("views", "../views"); // If you run the index js server directly from the file
+// app.set("views", "../views"); // If you run the index js server directly from the file
 app.set("view engine", "ejs");
 
 app.use(cookieParser());
