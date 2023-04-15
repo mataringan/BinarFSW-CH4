@@ -10,7 +10,7 @@ const cloudinaryUpload = require("../middleware/uploadImage");
 
 const app = express();
 
-const PORT = process.env.EX_PORT;
+const PORT = process.env.EX_PORT || 5000;
 
 app.use(express.static(publicDir));
 // app.set("views", "../views"); // If you run the index js server directly from the file
